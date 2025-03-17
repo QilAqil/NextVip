@@ -1,9 +1,8 @@
-// "use client"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../app/navbar";
-import { useState } from "react";
+import ClientLayout from "./ClientLayout";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,16 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // const [state, setState] = useState(0);
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <Navbar /> */}
-        {/* <h1>Layout {state} </h1>
-        <button onClick={() => setState(state + 1)}>Click me</button> */}
-        {children}
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
