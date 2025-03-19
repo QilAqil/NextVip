@@ -3,13 +3,15 @@ import DetailProductPage from "./../../product/[[...slug]]/page";
 const data = [
   {
     id: 1,
-    name: "sandal",
+    title: "sandal",
     price: 100000,
+    image: "https://www.nike.com/id/w/mens-erling-haaland-7fwfyznik1",
   },
   {
     id: 2,
-    name: "sandal jepit",
+    title: "sandal jepit",
     price: 1000000,
+    image: "https://www.nike.com/id/w/mens-erling-haaland-7fwfyznik1",
   },
 ];
 
