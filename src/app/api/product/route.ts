@@ -1,17 +1,18 @@
 import { NextResponse } from "next/server";
-import DetailProductPage from "./../../product/[[...slug]]/page";
 const data = [
   {
     id: 1,
     title: "sandal",
     price: 100000,
-    image: "https://www.nike.com/id/w/mens-erling-haaland-7fwfyznik1",
+    image:
+      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/baa3702e-8def-47bc-99f0-bec2f8baa56e/PHANTOM+GX+II+ACADEMY+FG%2FMG+EH.png",
   },
   {
     id: 2,
     title: "sandal jepit",
     price: 1000000,
-    image: "https://www.nike.com/id/w/mens-erling-haaland-7fwfyznik1",
+    image:
+      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/baa3702e-8def-47bc-99f0-bec2f8baa56e/PHANTOM+GX+II+ACADEMY+FG%2FMG+EH.png",
   },
 ];
 
@@ -20,19 +21,18 @@ export async function GET(request: NextResponse) {
   const id = searchParams.get("id");
   if (id) {
     const detailProduct = data.find((item) => item.id === Number(id));
-    if(detailProduct) {
-    return NextResponse.json({
-      status: 200,
-      message: "Success",
-      data: detailProduct,
-    });
+    if (detailProduct) {
+      return NextResponse.json({
+        status: 200,
+        message: "Success",
+        data: detailProduct,
+      });
     }
     return NextResponse.json({
       status: 404,
       message: "Not Found",
       data: {},
     });
-    
   }
   return NextResponse.json({ status: 200, message: "Success", data });
 }
