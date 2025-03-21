@@ -6,7 +6,11 @@ type ProductPageProps = {
 async function getData() {
   // const res = await fetch("https://fakestoreapi.com/products"); // menggambil data dari https://fakestoreapi
   const res = await fetch("http://localhost:3000/api/product", {
-    cache: "no-store",
+    cache: "force-cache",// untuk fatching atau frezz
+    next: {
+      tags: ["products"]
+      // revalidate: 30 // update setiap 30 detik
+    }
   }); // menggambil data dari lokal
 
   if (!res.ok) {
